@@ -1,0 +1,92 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: lightblue;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contenedor-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-palabras, .input-nombre{
+  /* display: block; */
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px;
+}
+
+.letra {
+  background-color: whitesmoke;
+  padding: 10px;
+  border: 1px solid gray;
+  margin: 4px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+#teclado {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.teclado-letra{
+  width: 40px;
+  height: 40px;
+  background-color: #8585FF;
+  border: 1px solid #505099;
+  border-radius: 6px;
+}
+
+.teclado-letra:hover {
+  cursor: pointer;
+  background-color: #6565FF;
+}
+
+.teclado-letra:disabled {
+  background-color: #A5A5FF;
+}
+
+#tablas {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+#table1, #table2 {
+  border: 1px solid black;
+}
+
+#table1 td, #table2 td {
+  padding: 0px 10px;
+  text-align: center;
+}
+
+#contenedor-palabra{
+  display: flex;
+  justify-content: center;
+}
+
+#contenedor-1{
+  margin: 0px auto 0px auto;
+}
+
+.contenedor-resultado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+}

@@ -1,0 +1,102 @@
+<div>
+  
+  <div ng-show="status < 2">
+    <p>Para comenzar a jugar se deben registrar los jugadores y sus palabras.</p>
+    <p>Haz click en el siguiente botón para comenzar: </p>
+    <a href="#!">Comenzar</a>
+  </div>
+  
+  
+  <div ng-show="status == 2">
+    
+    <div id="contenedor-1">
+    <h3 style="text-align: center;">A jugar!</h3>
+    <p style="text-align: center;"> {{ players[0].name }} vs. {{ players[1].name }} </p>
+
+    <div id="tablas">
+      <table id="table1">
+        <tr><td>Jugador</td><td>{{ players[0].name }}</td></tr>
+        <tr><td>Aciertos</td><td>{{ players[0].score }}</td></tr>
+        <tr><td>Errores</td><td>{{ players[0].errors }}</td></tr>
+        <tr><td>Puntos</td><td>{{ players[0].pts }}</td></tr>
+      </table>
+
+      <table id="table2">
+        <tr><td>Jugador</td><td>{{ players[1].name }}</td></tr>
+        <tr><td>Aciertos</td><td>{{ players[1].score }}</td></tr>
+        <tr><td>Errores</td><td>{{ players[1].errors }}</td></tr>
+        <tr><td>Puntos</td><td>{{ players[1].pts }}</td></tr>
+      </table>  
+    </div>
+
+    <p style="text-align: center;"> {{ players[gameStatus.player].name }}, adivina la palabra: </p>
+    
+    </div>
+    
+    <div id="contenedor-palabra">
+      <span ng-repeat="letra in gameStatus.word2guess track by $index" class="letra">
+        {{ letra }}
+      </span>
+    </div>
+
+    <div id="teclado">
+      <div>
+        <button class="teclado-letra" ng-click="pulsar($event)">Q</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">W</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">E</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">R</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">T</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">Y</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">U</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">I</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">O</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">P</button>
+      </div>
+      <div>
+        <button class="teclado-letra" ng-click="pulsar($event)">A</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">S</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">D</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">F</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">G</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">H</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">J</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">K</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">L</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">Ñ</button>
+      </div>
+      <div>
+        <button class="teclado-letra" ng-click="pulsar($event)">Z</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">X</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">C</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">V</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">B</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">N</button>
+        <button class="teclado-letra" ng-click="pulsar($event)">M</button>
+      </div>
+    </div>
+
+    <div ng-show="gameStatus.result == 1" class="contenedor-resultado">
+      <h1>ADIVINASTE!!</h1>
+      <button ng-click="nextTurn()">Siguiente Turno</button>
+    </div>
+
+    <div ng-show="gameStatus.result == 2" class="contenedor-resultado">
+      <h1>PERDISTE!!</h1>
+      <button ng-click="nextTurn()">Siguiente Turno</button>
+    </div>
+
+  </div>
+
+  <div ng-show="status > 2">
+    <h1>Resultados Finales:</h1>
+
+    <table>
+      <tr><th>Jugador</th><th>Puntos</th></tr>
+      <tr><td>{{ players[0].name }}</td><td> {{ players[0].pts }}</td></tr>
+      <tr><td>{{ players[1].name }}</td><td> {{ players[1].pts }}</td></tr>
+    </table>
+
+    <p> Ganador: {{ gameStatus.winner }} </p>
+
+  </div>
+</div>

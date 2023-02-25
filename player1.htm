@@ -1,0 +1,24 @@
+<div class="contenedor-page">
+  <h1>Jugador 1</h1>
+  
+  <div>
+    <label for="">Nombre P1:</label>
+    <input type="text" ng-model="players[0].name" class="input-nombre">
+    
+    <p>Elige tres palabras que deberá adivinar el jugador 2</p>
+    <div>
+      <label for="">Palabra 1:</label>
+      <input type="text" class="input-palabras" ng-model="playersWords[0][0]">
+    </div>
+    <div>
+      <label for="">Palabra 2:</label>
+      <input type="text" class="input-palabras" ng-model="playersWords[0][1]">
+    </div>
+    <div>
+      <label for="">Palabra 3:</label>
+      <input type="text" class="input-palabras" ng-model="playersWords[0][2]">
+    </div>
+  </div>
+
+  <a href="#!player2" ng-click="inicializarP1()"><button ng-click="inicializarP1()">Next</button></a>
+</div>
