@@ -124,8 +124,8 @@ footer{
 
 @media only screen and (max-width: 600px) {
   .teclado-letra{
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     background-color: #8585FF;
     border: 1px solid #505099;
     border-radius: 6px;
