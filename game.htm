@@ -3,7 +3,9 @@
   <div ng-show="status < 2">
     <p>Para comenzar a jugar se deben registrar los jugadores y sus palabras.</p>
     <p>Haz click en el siguiente botón para comenzar: </p>
-    <a href="#!">Comenzar</a>
+    <a href="#!player1">
+      <button class="boton">Comezar</button>
+    </a>
   </div>
   
   
@@ -15,14 +17,14 @@
 
     <div id="tablas">
       <table id="table1">
-        <tr><td>Jugador</td><td>{{ players[0].name }}</td></tr>
+        <tr class="tablas-encabezado"><td>Jugador</td><td>{{ players[0].name }}</td></tr>
         <tr><td>Aciertos</td><td>{{ players[0].score }}</td></tr>
         <tr><td>Errores</td><td>{{ players[0].errors }}</td></tr>
         <tr><td>Puntos</td><td>{{ players[0].pts }}</td></tr>
       </table>
 
       <table id="table2">
-        <tr><td>Jugador</td><td>{{ players[1].name }}</td></tr>
+        <tr class="tablas-encabezado"><td>Jugador</td><td>{{ players[1].name }}</td></tr>
         <tr><td>Aciertos</td><td>{{ players[1].score }}</td></tr>
         <tr><td>Errores</td><td>{{ players[1].errors }}</td></tr>
         <tr><td>Puntos</td><td>{{ players[1].pts }}</td></tr>
@@ -77,12 +79,14 @@
 
     <div ng-show="gameStatus.result == 1" class="contenedor-resultado">
       <h1>ADIVINASTE!!</h1>
-      <button ng-click="nextTurn()">Siguiente Turno</button>
+      <img src="./imagenes/grinning-face--v3.png" alt="Win Face" class="img-resultado">
+      <button ng-click="nextTurn()" class="boton">Siguiente Turno</button>
     </div>
 
     <div ng-show="gameStatus.result == 2" class="contenedor-resultado">
       <h1>PERDISTE!!</h1>
-      <button ng-click="nextTurn()">Siguiente Turno</button>
+      <img src="./imagenes/oops--v2.png" alt="Lose Face" class="img-resultado">
+      <button ng-click="nextTurn()" class="boton">Siguiente Turno</button>
     </div>
 
   </div>

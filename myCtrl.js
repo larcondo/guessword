@@ -5,13 +5,13 @@ let numeroWord = 0;
 $scope.status = 0;
 
 $scope.players = [
-  {name: 'Lucas', score: 0, errors: 0, pts: 0},
-  {name: 'Nadia', score: 0, errors: 0, pts: 0}
+  {name: '', score: 0, errors: 0, pts: 0},
+  {name: '', score: 0, errors: 0, pts: 0}
 ];
 
 $scope.playersWords = [
-  ['ARROZ', 'TOMATE', 'CASA'],
-  ['CHOCLO', 'GATO', 'PERRO']
+  ['', '', ''],
+  ['', '', '']
 ];
 
 $scope.playersArrays = [
