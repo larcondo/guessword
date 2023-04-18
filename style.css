@@ -7,16 +7,61 @@ button {
   font-family: 'Montserrat', sans-serif;
 }
 
+h1 {
+  margin: 10px 0;
+}
+
 .contenedor-page{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.introduccion {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+.player-box {
+  /* border: 1px solid black; */
+  /* border-radius: 16px; */
+  /* background-color: hsl(195, 53%, 83%); */
+  margin: 10px 0 50px 0;
+  padding: 10px 20px;
+}
+
+.player-table {
+  border-collapse: collapse;
+  /* border: 1px solid; */
+  /* width: 80%; */
+  margin: 0 auto;
+}
+
+/* .player-table td{
+  border: 1px solid lightcyan;
+} */
+
+.player-table-td-static {
+  text-align: center;
+}
+
+.player-table-td-campos {
+  text-align: left;
+  /* width: 50%; */
+}
+
+.player-table-td-text {
+  padding: 10px;
+}
+
 .input-palabras, .input-nombre{
   /* display: block; */
   font-family: 'Montserrat', sans-serif;
   margin: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 4px 10px;
+  background-color: #efefef;
 }
 
 .letra {
@@ -114,6 +159,25 @@ button {
 .img-resultado {
   height: 64px;
   margin-bottom: 30px;
+}
+
+.resultados-finales {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.resultados-finales h1, 
+.resultados-finales p {
+  text-align: center;
+}
+
+.resultados-finales table {
+  margin: 0 auto;
+}
+
+.resultados-finales .boton {
+  display: block;
+  margin: 0 auto;
 }
 
 footer{

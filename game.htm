@@ -1,11 +1,13 @@
 <div>
   
   <div ng-show="status < 2">
-    <p>Para comenzar a jugar se deben registrar los jugadores y sus palabras.</p>
-    <p>Haz click en el siguiente botón para comenzar: </p>
-    <a href="#!player1">
-      <button class="boton">Comezar</button>
-    </a>
+    <p style="text-align: center;">Para comenzar a jugar se deben registrar los jugadores y sus palabras.</p>
+    <p style="text-align: center;">Haz click en el siguiente botón para comenzar: </p>
+    
+    <button class="boton" style="margin: 0 auto; display: block;" ng-click="reiniciar()">
+      Comezar
+    </button>
+    
   </div>
   
   
@@ -41,7 +43,19 @@
       </span>
     </div>
 
-    <div id="teclado">
+    <div ng-show="gameStatus.result == 1" class="contenedor-resultado">
+      <h1>ADIVINASTE!!</h1>
+      <img src="./imagenes/grinning-face--v3.png" alt="Win Face" class="img-resultado">
+      <button ng-click="nextTurn()" class="boton">Siguiente Turno</button>
+    </div>
+
+    <div ng-show="gameStatus.result == 2" class="contenedor-resultado">
+      <h1>PERDISTE!!</h1>
+      <img src="./imagenes/oops--v2.png" alt="Lose Face" class="img-resultado">
+      <button ng-click="nextTurn()" class="boton">Siguiente Turno</button>
+    </div>
+
+    <div id="teclado" ng-show="gameStatus.result == 0">
       <div>
         <button class="teclado-letra" ng-click="pulsar($event)">Q</button>
         <button class="teclado-letra" ng-click="pulsar($event)">W</button>
@@ -77,21 +91,12 @@
       </div>
     </div>
 
-    <div ng-show="gameStatus.result == 1" class="contenedor-resultado">
-      <h1>ADIVINASTE!!</h1>
-      <img src="./imagenes/grinning-face--v3.png" alt="Win Face" class="img-resultado">
-      <button ng-click="nextTurn()" class="boton">Siguiente Turno</button>
-    </div>
-
-    <div ng-show="gameStatus.result == 2" class="contenedor-resultado">
-      <h1>PERDISTE!!</h1>
-      <img src="./imagenes/oops--v2.png" alt="Lose Face" class="img-resultado">
-      <button ng-click="nextTurn()" class="boton">Siguiente Turno</button>
-    </div>
+    
 
   </div>
 
-  <div ng-show="status > 2">
+  <!-- Se muestra cuando se finaliza el juego -->
+  <div ng-show="status > 2" class="resultados-finales">
     <h1>Resultados Finales:</h1>
 
     <table>
@@ -102,5 +107,9 @@
 
     <p> Ganador: {{ gameStatus.winner }} </p>
 
+    <button class="boton" ng-click="reiniciar()">
+      Volver a jugar!
+    </button>
+    
   </div>
 </div>

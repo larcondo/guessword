@@ -1,25 +1,54 @@
 <div class="contenedor-page">
   <h1>Jugador 2</h1>
   
-  <div>
-    <label for="">Nombre P2:</label>
-    <input type="text" ng-model="players[1].name" class="input-nombre">
+  <div class="player-box">
+    
+    <table class="player-table" ng-show="!gameStatus.p2inicializado">
+      <tr>
+        <td class="player-table-td-static">Nombre:</td>
+        <td class="player-table-td-campos">
+          <input type="text" ng-model="players[1].name" class="input-nombre" ng-change="validarP2()">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="player-table-td-text">
+          <p>Elige tres palabras que deberá adivinar el jugador 1.</p>
+        </td>        
+      </tr>
+      <tr>
+        <td class="player-table-td-static">Palabra 1:</td>
+        <td class="player-table-td-campos">
+          <input type="text" class="input-palabras" ng-model="playersWords[1][0]" ng-change="validarP2()">
+        </td>
+      </tr>
+      <tr>
+        <td class="player-table-td-static">Palabra 2:</td>
+        <td class="player-table-td-campos">
+          <input type="text" class="input-palabras" ng-model="playersWords[1][1]" ng-change="validarP2()">
+        </td>
+      </tr>
+      <tr>
+        <td class="player-table-td-static">Palabra 3:</td>
+        <td class="player-table-td-campos">
+          <input type="text" class="input-palabras" ng-model="playersWords[1][2]" ng-change="validarP2()">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="player-table-td-text">
+          <p>¡Cuidado! No permitas que el jugador 1 vea tus palabras.</p>
+        </td>
+      </tr>
+    </table>
 
-    <p>Elige tres palabras que deberá adivinar el jugador 1</p>
-    <div>
-      <label for="">Palabra 1:</label>
-      <input type="text" class="input-palabras" ng-model="playersWords[1][0]">
-    </div>
-    <div>
-      <label for="">Palabra 2:</label>
-      <input type="text" class="input-palabras" ng-model="playersWords[1][1]">
-    </div>
-    <div>
-      <label for="">Palabra 3:</label>
-      <input type="text" class="input-palabras" ng-model="playersWords[1][2]">
+    <div ng-show="gameStatus.p2inicializado">
+      <p>El jugador 2 ya eligió sus palabras!</p>
+      <p>¿Desea reiniciar el juego? <a href="/" ng-click="reiniciar()">Sí</a></p>
     </div>
   </div>
 
-  <a href="#!game" ng-click="inicializarP2()"><button ng-click="inicializarP2()" class="boton">Empezar</button></a>
+  <p ng-bind="gameStatus.p2message" style="color: red;"></p>
+  <!-- <a href="#!game" ng-click="inicializarP2()"> -->
+    <button ng-click="inicializarP2()" class="boton">Empezar</button>
+  <!-- </a> -->
 
 </div>
