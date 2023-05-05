@@ -1,3 +1,6 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: lightblue;
@@ -11,15 +14,75 @@ h1 {
   margin: 10px 0;
 }
 
+/* ------------------ main.htm ------------------*/
+.introduccion {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+.paso{
+  background-color: hsl(195, 53%, 82%);
+  margin: 0.75em;
+  padding: 0.5em 2em;
+  height: 10em;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.p1 {
+  color: blue;
+}
+
+.p2 {
+  color: red;
+}
+
+.contenedor-botones-intro {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.boton-intro {
+  padding: 0.5em 1em;
+  background-color: #8585FF;
+  border: 1px solid #505099;
+  border-radius: 20px;
+  width: 3em;
+  height: 3em;
+}
+
+.boton-intro:hover {
+  cursor: pointer;
+  background-color: #6565ff;
+  color: lightblue;
+}
+
+.boton-intro:disabled {
+  background-color: hsl(240, 100%, 85%);
+  border: 1px solid hsl(240, 31%, 60%);
+}
+
+.boton {
+  padding: 10px 20px;
+  background-color: #8585FF;
+  border: 1px solid #505099;
+  border-radius: 20px;
+}
+
+.boton:hover {
+  cursor: pointer;
+  background-color: #6565FF;
+  color: lightblue;
+}
+
+/* ------------------ playerX.htm ------------------*/
 .contenedor-page{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.introduccion {
-  width: 50%;
-  margin-bottom: 50px;
 }
 
 .player-box {
@@ -37,10 +100,6 @@ h1 {
   margin: 0 auto;
 }
 
-/* .player-table td{
-  border: 1px solid lightcyan;
-} */
-
 .player-table-td-static {
   text-align: center;
 }
@@ -54,7 +113,8 @@ h1 {
   padding: 10px;
 }
 
-.input-palabras, .input-nombre{
+.input-palabras,
+.input-nombre{
   /* display: block; */
   font-family: 'Montserrat', sans-serif;
   margin: 10px;
@@ -64,6 +124,7 @@ h1 {
   background-color: #efefef;
 }
 
+/* ------------------ game.htm ------------------*/
 .letra {
   background-color: whitesmoke;
   padding: 10px;
@@ -98,19 +159,6 @@ h1 {
 
 .teclado-letra:disabled {
   background-color: #A5A5FF;
-}
-
-.boton {
-  padding: 10px 20px;
-  background-color: #8585FF;
-  border: 1px solid #505099;
-  border-radius: 20px;
-}
-
-.boton:hover {
-  cursor: pointer;
-  background-color: #6565FF;
-  color: lightblue;
 }
 
 #tablas {

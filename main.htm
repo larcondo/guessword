@@ -6,18 +6,53 @@
       por el contrincante. Pero, ¡cuidado! cada jugador podrá fallar hasta un máximo de cinco letras.
     </p>
     <p>Empezar a jugar es muy sencillo:</p>
-    <ol>
-      <li>El <i>Player 1</i> elige sus tres palabras, las cuales el <i>Player 2</i> deberá adivinar.</li>
-      <li>Luego, el <i>Player 2</i> elige sus correspondientes 3 palabras.</li>
-      <li>Al darle click al botón "Empezar", comienza el juego.</li>
-      <li>Comienza adivinando el <i>Player 2</i> y luego le toca el turno al <i>Player 1</i>.</li>
-      <li>Se irán alternando los jugadores hasta que se terminen las palabras.</li>
-      <li>El ganador será el que más puntos logre al final, aunque también puede haber un empate.</li>
-      <li>Si el jugador adivina la palabra sin errores, sumará 50 puntos. Si comete un error, 40 puntos, y así sucesivamente.
-        El menor puntaje que puede sumar es 10 puntos. Esto sucederá si adivina la palabra con 4 errores cometidos.
-      </li>
-    </ol>
+    
+
+    <section class="paso" ng-show="pasoIntro === 1">
+      <p>El Player 1 <i class="fa fa-male p1" aria-hidden="true"></i> elige sus tres palabras, las cuales el Player 2 <i class="fa fa-male p2" aria-hidden="true"></i> deberá adivinar.</p>
+    </section>
+
+    <section class="paso" ng-show="pasoIntro === 2">
+      <p>Luego, el Player 2 <i class="fa fa-male p2" aria-hidden="true"></i> elige sus correspondientes 3 palabras.</p>
+    </section>
+
+    <section class="paso" ng-show="pasoIntro === 3">
+      <p>Al darle click al botón "Empezar", comienza el juego.</p>
+    </section>
+
+    <section class="paso" ng-show="pasoIntro === 4">
+      <p>Comienza adivinando el Player 2 <i class="fa fa-male p2" aria-hidden="true"></i>.</p>
+      <p>Luego le toca el turno al Player 1 <i class="fa fa-male p1" aria-hidden="true"></i>.</p>
+    </section>
+    
+    <section class="paso" ng-show="pasoIntro === 5">
+      <p>Se irán alternando los jugadores hasta que se terminen las palabras.</p>
+    </section>
+    
+    <section class="paso" ng-show="pasoIntro === 6">
+      <p>El ganador será el que más puntos logre al final, aunque también puede haber un empate.</p>
+    </section>
+    
+    <section class="paso" ng-show="pasoIntro === 7">
+      <p>Si el jugador adivina la palabra sin errores, sumará 50 puntos. Si comete un error, 40 puntos, y así sucesivamente.</p>
+      <p>El menor puntaje que puede sumar es 10 puntos. Esto sucederá si adivina la palabra con 4 errores cometidos.</p>
+    </section>
+
+    <div class="contenedor-botones-intro">
+      <button ng-disabled="pasoIntro < 2" ng-click="retrocederPasoIntro()" class="boton-intro">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+      <button ng-show="pasoIntro < 7" ng-disabled="pasoIntro > 6" ng-click="avanzarPasoIntro()" class="boton-intro">
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </button>
+      <a href="#!player1" ng-show="pasoIntro > 6" ng-click="reiniciarPasoIntro()">
+        <button class="boton">Comenzar</button>
+      </a>
+    </div>
+
   </div>
 
-  <a href="#!player1"><button class="boton">Comenzar</button></a>
+  <a href="#!player1" ng-click="reiniciarPasoIntro()">
+    <button class="boton">Ya se jugar, Comenzar!</button>
+  </a>
 </div>

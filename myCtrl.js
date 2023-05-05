@@ -3,6 +3,19 @@ app.controller('myCtrl', function($scope, $window){
   const maxErrors = 5;
   let numeroWord = 0;
   $scope.status = 0;
+  $scope.pasoIntro = 1;
+
+  $scope.avanzarPasoIntro = () => {
+    if ($scope.pasoIntro < 7) $scope.pasoIntro += 1;
+  }
+
+  $scope.retrocederPasoIntro = () => {
+    if ($scope.pasoIntro > 1) $scope.pasoIntro -= 1;
+  }
+
+  $scope.reiniciarPasoIntro = () => {
+    $scope.pasoIntro = 1;
+  }
 
   $scope.validaciones = {
     player1: false, player2: false
